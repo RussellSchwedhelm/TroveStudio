@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import './archive-sale.css';
 
 const ARCHIVE_PRODUCTS = [
   {
@@ -62,123 +63,6 @@ export default function ArchiveSalePage() {
           <p>Please note: All archive sale items are final sale and cannot be returned or exchanged.</p>
         </div>
       </section>
-
-      <style jsx>{`
-        .archive-page {
-          padding-top: 80px;
-          padding-bottom: 120px;
-        }
-        .archive-header {
-          text-align: center;
-          margin-bottom: 80px;
-        }
-        .header-badge {
-          display: inline-block;
-          font-size: 10px;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-          border: 1px solid var(--color-text);
-          padding: 4px 12px;
-          margin-bottom: 24px;
-        }
-        .serif-title {
-          font-family: var(--font-serif);
-          font-size: 48px;
-          font-weight: 400;
-          margin-bottom: 24px;
-        }
-        .archive-intro {
-          font-size: 16px;
-          color: var(--color-text-light);
-          max-width: 600px;
-          margin: 0 auto;
-          line-height: 1.6;
-        }
-
-        .product-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 60px 40px;
-        }
-        .product-card {
-          cursor: pointer;
-          position: relative;
-        }
-        .product-image {
-          aspect-ratio: 4/5;
-          overflow: hidden;
-          background-color: #F7F7F7;
-          margin-bottom: 20px;
-          position: relative;
-        }
-        .product-image img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.8s ease;
-        }
-        .product-card:hover .product-image img {
-          transform: scale(1.03);
-        }
-        .sale-tag {
-          position: absolute;
-          top: 12px;
-          right: 12px;
-          background: var(--color-text);
-          color: white;
-          font-size: 10px;
-          padding: 4px 8px;
-          letter-spacing: 1px;
-        }
-        .product-info {
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-        }
-        .product-title {
-          font-size: 14px;
-          font-weight: 400;
-        }
-        .price-container {
-          display: flex;
-          gap: 12px;
-          font-size: 14px;
-        }
-        .original-price {
-          color: var(--color-text-light);
-          text-decoration: line-through;
-        }
-        .sale-price {
-          color: #B22222; /* A subtle dark red for sale */
-          font-weight: 500;
-        }
-
-        .archive-footer {
-          margin-top: 100px;
-          text-align: center;
-        }
-        .footer-notice {
-          border-top: 1px solid var(--color-border);
-          padding-top: 40px;
-          font-size: 12px;
-          color: var(--color-text-light);
-          font-style: italic;
-        }
-
-        @media (max-width: 1024px) {
-          .product-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
-        }
-        @media (max-width: 768px) {
-          .product-grid {
-            grid-template-columns: repeat(1, 1fr);
-          }
-          .serif-title {
-            font-size: 36px;
-          }
-        }
-      `}</style>
     </div>
   );
 }

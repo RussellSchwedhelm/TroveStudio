@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import './careers.css';
 
 export default function CareersPage() {
   return (
@@ -45,101 +46,6 @@ export default function CareersPage() {
           </div>
         </div>
       </section>
-
-      <style jsx>{`
-        .careers-page {
-          padding-top: 80px;
-          padding-bottom: 120px;
-        }
-        .page-header {
-          text-align: center;
-          margin-bottom: 80px;
-        }
-        .serif-title {
-          font-family: var(--font-serif);
-          font-size: 48px;
-          font-weight: 400;
-          margin-bottom: 16px;
-        }
-        .page-description {
-          font-size: 16px;
-          color: var(--color-text-light);
-        }
-        .careers-content {
-          max-width: 800px;
-        }
-        .careers-intro {
-          margin-bottom: 80px;
-        }
-        .serif-subtitle {
-          font-family: var(--font-serif);
-          font-size: 28px;
-          font-weight: 400;
-          margin-bottom: 24px;
-        }
-        .careers-intro p {
-          font-size: 16px;
-          line-height: 1.8;
-          color: var(--color-text-light);
-          margin-bottom: 24px;
-        }
-        .section-label {
-          font-size: 12px;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          font-weight: 500;
-          color: var(--color-text-light);
-          margin-bottom: 32px;
-          border-bottom: 1px solid var(--color-border);
-          padding-bottom: 12px;
-        }
-        .positions-empty {
-          background-color: #F9F9F9;
-          padding: 40px;
-          border-radius: 4px;
-          margin-bottom: 80px;
-        }
-        .positions-empty p {
-          font-size: 16px;
-          color: var(--color-text-light);
-          margin-bottom: 16px;
-          line-height: 1.6;
-        }
-        .positions-empty p:last-child {
-          margin-bottom: 0;
-        }
-        .positions-empty a {
-          text-decoration: underline;
-          text-underline-offset: 4px;
-          color: var(--color-text);
-        }
-        .culture-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 40px;
-        }
-        .culture-item h4 {
-          font-size: 14px;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          margin-bottom: 16px;
-          font-weight: 500;
-        }
-        .culture-item p {
-          font-size: 14px;
-          color: var(--color-text-light);
-          line-height: 1.6;
-        }
-
-        @media (max-width: 768px) {
-          .culture-grid {
-            grid-template-columns: 1fr;
-          }
-          .serif-title {
-            font-size: 36px;
-          }
-        }
-      `}</style>
     </div>
   );
 }

@@ -1,0 +1,86 @@
+.jewelry-care-page {
+  padding-top: 80px;
+  padding-bottom: 120px;
+}
+.page-header {
+  text-align: center;
+  margin-bottom: 100px;
+}
+.serif-title {
+  font-family: var(--font-serif);
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+.page-description {
+  font-size: 16px;
+  color: var(--color-text-light);
+  max-width: 500px;
+  margin: 0 auto;
+}
+.care-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-bottom: 100px;
+}
+.care-item {
+  display: flex;
+  flex-direction: column;
+}
+.serif-subtitle {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.care-item p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text-light);
+  margin-bottom: 24px;
+}
+.care-item ul {
+  padding-left: 0;
+}
+.care-item li {
+  font-size: 15px;
+  color: var(--color-text);
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 20px;
+}
+.care-item li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--color-border);
+}
+.care-cta {
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+  padding-top: 60px;
+}
+.care-cta p {
+  font-size: 16px;
+  color: var(--color-text-light);
+  margin-bottom: 12px;
+}
+.underline-link {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .care-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .serif-title {
+    font-size: 36px;
+  }
+}

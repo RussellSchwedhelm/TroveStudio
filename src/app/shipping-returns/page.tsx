@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import './shipping-returns.css';
 
 export default function ShippingReturnsPage() {
   return (
@@ -63,95 +64,6 @@ export default function ShippingReturnsPage() {
           <p>Every piece is carefully inspected before shipping. However, if you receive a faulty item, please contact us immediately at <a href="mailto:hello@trovestudio.co.za">hello@trovestudio.co.za</a> with photos of the damage. We will arrange for a replacement or full refund including shipping costs.</p>
         </div>
       </section>
-
-      <style jsx>{`
-        .shipping-returns-page {
-          padding-top: 80px;
-          padding-bottom: 120px;
-        }
-        .page-header {
-          text-align: center;
-          margin-bottom: 80px;
-        }
-        .serif-title {
-          font-family: var(--font-serif);
-          font-size: 48px;
-          font-weight: 400;
-        }
-        .content-section {
-          max-width: 900px;
-        }
-        .policy-block {
-          margin-bottom: 60px;
-        }
-        .policy-block h2 {
-          font-family: var(--font-serif);
-          font-size: 28px;
-          font-weight: 400;
-          margin-bottom: 24px;
-        }
-        .policy-block p {
-          font-size: 16px;
-          line-height: 1.8;
-          color: var(--color-text-light);
-          margin-bottom: 32px;
-        }
-        .policy-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 40px;
-        }
-        .policy-item h3 {
-          font-size: 14px;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          margin-bottom: 16px;
-          font-weight: 500;
-        }
-        .policy-item ul li {
-          font-size: 15px;
-          margin-bottom: 12px;
-          color: var(--color-text-light);
-        }
-        .policy-item ul li strong {
-          color: var(--color-text);
-          font-weight: 500;
-        }
-        .divider {
-          border: none;
-          border-top: 1px solid var(--color-border);
-          margin: 60px 0;
-        }
-        .policy-list {
-          display: flex;
-          flex-direction: column;
-          gap: 40px;
-        }
-        .list-item h3 {
-          font-size: 14px;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          margin-bottom: 12px;
-          font-weight: 500;
-        }
-        .list-item p {
-          margin-bottom: 0;
-        }
-        .list-item a {
-          text-decoration: underline;
-          text-underline-offset: 4px;
-          color: var(--color-text);
-        }
-
-        @media (max-width: 768px) {
-          .serif-title {
-            font-size: 36px;
-          }
-          .policy-grid {
-            grid-template-columns: 1fr;
-          }
-        }
-      `}</style>
     </div>
   );
 }

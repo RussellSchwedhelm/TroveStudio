@@ -1,0 +1,74 @@
+.about-page {
+  padding-top: 80px;
+  padding-bottom: 120px;
+}
+.page-header {
+  margin-bottom: 80px;
+  text-align: center;
+}
+.serif-title {
+  font-family: var(--font-serif);
+  font-size: 48px;
+  font-weight: 400;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 100px;
+  align-items: start;
+}
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.lead {
+  font-size: 24px;
+  line-height: 1.4;
+  color: var(--color-text);
+  font-family: var(--font-serif);
+}
+.about-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-text-light);
+}
+.philosophy-section {
+  margin-top: 48px;
+}
+.philosophy-section h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+.philosophy-section ul {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.philosophy-section li strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: var(--color-text);
+  font-weight: 500;
+}
+.philosophy-section li p {
+  font-size: 14px;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .about-image {
+    order: -1;
+  }
+  .serif-title {
+    font-size: 36px;
+  }
+}
