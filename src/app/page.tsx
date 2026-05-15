@@ -3,21 +3,23 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
+import { useCart } from '@/components/CartContext';
+
 const products = [
   {
-    id: 1,
+    id: "1",
     title: "The Classic Ring",
     price: 2650,
     image: "/assets/images/trove_hero_3_1778846644095.png"
   },
   {
-    id: 2,
+    id: "2",
     title: "Chunky Hoops",
     price: 3850,
     image: "/assets/images/trove_hero_1_1778846613200.png"
   },
   {
-    id: 3,
+    id: "3",
     title: "Statement Chain",
     price: 6400,
     image: "/assets/images/trove_hero_2_1778846628465.png"
@@ -26,6 +28,7 @@ const products = [
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { addItem } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -118,6 +121,18 @@ export default function Home() {
                   width={500} 
                   height={625}
                 />
+                <button 
+                  className="quick-add-to-cart"
+                  onClick={() => addItem({
+                    id: product.id,
+                    name: product.title,
+                    price: product.price,
+                    image: product.image,
+                    quantity: 1
+                  })}
+                >
+                  Quick Add
+                </button>
               </div>
               <div className="product-info">
                 <h4 className="product-title">{product.title}</h4>
