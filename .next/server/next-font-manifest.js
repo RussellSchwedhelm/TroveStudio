@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/russellschwedhelm/Library/Mobile Documents/com~apple~CloudDocs/Coding Projects/TroveStudio/app/layout\":[\"static/media/e4af272ccee01ff0-s.p.woff2\",\"static/media/eaead17c7dbfcd5d-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
