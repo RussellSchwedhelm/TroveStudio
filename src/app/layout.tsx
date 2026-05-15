@@ -32,18 +32,18 @@ export default function RootLayout({
               <div className="footer-column">
                 <h4>Customer Care</h4>
                 <ul>
-                  <li><a href="#">Contact Us</a></li>
-                  <li><a href="#">Shipping & Returns</a></li>
-                  <li><a href="#">FAQ</a></li>
-                  <li><a href="#">Jewelry Care</a></li>
+                  <li><a href="/contact">Contact Us</a></li>
+                  <li><a href="/shipping-returns">Shipping & Returns</a></li>
+                  <li><a href="/faq">FAQ</a></li>
+                  <li><a href="/jewelry-care">Jewelry Care</a></li>
                 </ul>
               </div>
               <div className="footer-column">
                 <h4>About</h4>
                 <ul>
-                  <li><a href="#">Our Story</a></li>
-                  <li><a href="#">Journal</a></li>
-                  <li><a href="#">Careers</a></li>
+                  <li><a href="/about">Our Story</a></li>
+                  <li><a href="/journal">Journal</a></li>
+                  <li><a href="/careers">Careers</a></li>
                 </ul>
               </div>
               <div className="footer-column newsletter-col">

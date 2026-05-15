@@ -1,15 +1,29 @@
-import React from 'react';
-import { createClient } from '@/lib/supabase-server';
+'use client';
 
-export default async function JournalPage() {
-  const supabase = await createClient();
-  
-  const { data: journalPosts } = await supabase
-    .from('journals')
-    .select('*')
-    .order('created_at', { ascending: false });
+import React, { useEffect, useState } from 'react';
+import { supabase } from '@/lib/supabase';
 
-  const posts = journalPosts || [];
+export default function JournalPage() {
+  const [posts, setPosts] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchPosts() {
+      const { data } = await supabase
+        .from('journals')
+        .select('*')
+        .order('created_at', { ascending: false });
+      
+      setPosts(data || []);
+      setLoading(false);
+    }
+    fetchPosts();
+  }, []);
+
+  if (loading) {
+    return <div className="journal-page container" style={{ paddingTop: '80px', textAlign: 'center' }}>Loading...</div>;
+  }
+
   const featuredPost = posts.find(p => p.is_featured) || posts[0];
   const otherPosts = featuredPost ? posts.filter(p => p.id !== featuredPost.id) : posts;
 
