@@ -1,49 +1,18 @@
-'use client';
-
 import React from 'react';
-
-const PRODUCTS = [
-  {
-    id: 1,
-    title: "Aurelia Hoop Earrings",
-    price: "R1,850",
-    image: "https://images.unsplash.com/photo-1535633302704-c02f4f7d53e3?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    id: 2,
-    title: "Luna Pendant Necklace",
-    price: "R2,200",
-    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    id: 3,
-    title: "Minimalist Band Ring",
-    price: "R1,450",
-    image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    id: 4,
-    title: "Serpentine Bracelet",
-    price: "R3,100",
-    image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    id: 5,
-    title: "Onyx Signet Ring",
-    price: "R2,800",
-    image: "https://images.unsplash.com/photo-1603561596112-0a132b757442?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    id: 6,
-    title: "Pearl Drop Earrings",
-    price: "R1,950",
-    image: "https://images.unsplash.com/photo-1588444839799-eb00f490ad71?auto=format&fit=crop&q=80&w=800"
-  }
-];
+import { createClient } from '@/lib/supabase-server';
 
 const CATEGORIES = ["All", "Necklaces", "Earrings", "Rings", "Bracelets"];
 
-export default function ShopPage() {
+export default async function ShopPage() {
+  const supabase = await createClient();
+  
+  const { data: products } = await supabase
+    .from('products')
+    .select('*')
+    .order('created_at', { ascending: false });
+
+  const items = products || [];
+
   return (
     <div className="shop-page">
       <section className="shop-header container">
@@ -64,17 +33,23 @@ export default function ShopPage() {
 
       <section className="shop-products container">
         <div className="product-grid">
-          {PRODUCTS.map((product) => (
-            <div key={product.id} className="product-card">
-              <div className="product-image">
-                <img src={product.image} alt={product.title} />
+          {items.length > 0 ? (
+            items.map((product) => (
+              <div key={product.id} className="product-card">
+                <div className="product-image">
+                  <img src={product.image_url} alt={product.title} />
+                </div>
+                <div className="product-info">
+                  <h3 className="product-title">{product.title}</h3>
+                  <span className="product-price">R {product.price.toLocaleString()}</span>
+                </div>
               </div>
-              <div className="product-info">
-                <h3 className="product-title">{product.title}</h3>
-                <span className="product-price">{product.price}</span>
-              </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <p style={{ textAlign: 'center', gridColumn: '1/-1', color: 'var(--color-text-light)' }}>
+              No products found. Please check back later.
+            </p>
+          )}
         </div>
       </section>
 

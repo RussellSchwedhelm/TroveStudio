@@ -1,29 +1,18 @@
-'use client';
-
 import React from 'react';
+import { createClient } from '@/lib/supabase-server';
 
-const JOURNAL_POSTS = [
-  {
-    id: 1,
-    title: "A Morning in the Studio",
-    subtitle: "Exploring the creative process",
-    image: "https://images.unsplash.com/photo-1459156212016-c812468e2115?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    id: 2,
-    title: "The Art of Layering",
-    subtitle: "How to style your collection",
-    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    id: 3,
-    title: "Sustainable Luxury",
-    subtitle: "Our commitment to the planet",
-    image: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&q=80&w=800"
-  }
-];
+export default async function JournalPage() {
+  const supabase = await createClient();
+  
+  const { data: journalPosts } = await supabase
+    .from('journals')
+    .select('*')
+    .order('created_at', { ascending: false });
 
-export default function JournalPage() {
+  const posts = journalPosts || [];
+  const featuredPost = posts.find(p => p.is_featured) || posts[0];
+  const otherPosts = featuredPost ? posts.filter(p => p.id !== featuredPost.id) : posts;
+
   return (
     <div className="journal-page">
       <section className="page-header container">
@@ -31,32 +20,40 @@ export default function JournalPage() {
         <p className="page-description">Stories, inspirations, and the lifestyle behind Trôve Studio.</p>
       </section>
 
-      <section className="journal-featured container">
-        <div className="featured-item">
-          <div className="featured-image">
-            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80&w=1200" alt="Featured Story" />
+      {featuredPost && (
+        <section className="journal-featured container">
+          <div className="featured-item">
+            <div className="featured-image">
+              <img src={featuredPost.image_url} alt={featuredPost.title} />
+            </div>
+            <div className="featured-content">
+              <span className="journal-label">Editorial</span>
+              <h2 className="featured-title">{featuredPost.title}</h2>
+              <p>{featuredPost.subtitle}</p>
+              <a href={`/journal/${featuredPost.id}`} className="read-story">Read Story</a>
+            </div>
           </div>
-          <div className="featured-content">
-            <span className="journal-label">Editorial</span>
-            <h2 className="featured-title">Modern Antiquity: Redefining Classics</h2>
-            <p>Our journey through the archives of jewelry history and how it influences our modern silhouettes.</p>
-            <a href="#" className="read-story">Read Story</a>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <section className="journal-grid container">
-        {JOURNAL_POSTS.map((post) => (
-          <div key={post.id} className="journal-card">
-            <div className="journal-card-image">
-              <img src={post.image} alt={post.title} />
+        {otherPosts.length > 0 ? (
+          otherPosts.map((post) => (
+            <div key={post.id} className="journal-card">
+              <div className="journal-card-image">
+                <img src={post.image_url} alt={post.title} />
+              </div>
+              <div className="journal-card-content">
+                <h3 className="journal-card-title">{post.title}</h3>
+                <p className="journal-card-subtitle">{post.subtitle}</p>
+              </div>
             </div>
-            <div className="journal-card-content">
-              <h3 className="journal-card-title">{post.title}</h3>
-              <p className="journal-card-subtitle">{post.subtitle}</p>
-            </div>
-          </div>
-        ))}
+          ))
+        ) : !featuredPost && (
+          <p style={{ textAlign: 'center', gridColumn: '1/-1', color: 'var(--color-text-light)' }}>
+            New stories coming soon.
+          </p>
+        )}
       </section>
 
       <style jsx>{`

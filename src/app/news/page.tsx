@@ -1,35 +1,17 @@
-'use client';
-
 import React from 'react';
+import { createClient } from '@/lib/supabase-server';
 
-const NEWS_ITEMS = [
-  {
-    id: 1,
-    date: "May 15, 2024",
-    title: "Introducing: The Solstice Collection",
-    category: "Collection Launch",
-    excerpt: "A celebration of light and shadow, our new Solstice collection features architectural forms in 18k solid gold.",
-    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    id: 2,
-    date: "April 28, 2024",
-    title: "Behind the Craft: Ethical Sourcing",
-    category: "Sustainability",
-    excerpt: "Learn about our commitment to transparency and how we source our materials from certified suppliers.",
-    image: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    id: 3,
-    date: "March 12, 2024",
-    title: "Trôve Studio x Fine Arts Gallery",
-    category: "Events",
-    excerpt: "An exclusive look at our recent collaboration exhibition in the heart of Cape Town.",
-    image: "https://images.unsplash.com/photo-1573162915955-6a8ba9d2fe20?auto=format&fit=crop&q=80&w=800"
-  }
-];
+export default async function NewsPage() {
+  const supabase = await createClient();
+  
+  const { data: newsItems } = await supabase
+    .from('news')
+    .select('*')
+    .order('created_at', { ascending: false });
 
-export default function NewsPage() {
+  // Fallback to empty array if no news
+  const items = newsItems || [];
+
   return (
     <div className="news-page">
       <section className="page-header container">
@@ -38,20 +20,26 @@ export default function NewsPage() {
       </section>
 
       <section className="news-grid container">
-        {NEWS_ITEMS.map((item) => (
-          <article key={item.id} className="news-card">
-            <div className="news-image">
-              <img src={item.image} alt={item.title} />
-              <span className="news-category">{item.category}</span>
-            </div>
-            <div className="news-content">
-              <time className="news-date">{item.date}</time>
-              <h2 className="news-title">{item.title}</h2>
-              <p className="news-excerpt">{item.excerpt}</p>
-              <a href={`/news/${item.id}`} className="read-more">Read More</a>
-            </div>
-          </article>
-        ))}
+        {items.length > 0 ? (
+          items.map((item) => (
+            <article key={item.id} className="news-card">
+              <div className="news-image">
+                <img src={item.image_url} alt={item.title} />
+                <span className="news-category">{item.category}</span>
+              </div>
+              <div className="news-content">
+                <time className="news-date">{item.date}</time>
+                <h2 className="news-title">{item.title}</h2>
+                <p className="news-excerpt">{item.excerpt}</p>
+                <a href={`/news/${item.id}`} className="read-more">Read More</a>
+              </div>
+            </article>
+          ))
+        ) : (
+          <p style={{ textAlign: 'center', gridColumn: '1/-1', color: 'var(--color-text-light)' }}>
+            Stay tuned for our latest updates and announcements.
+          </p>
+        )}
       </section>
 
       <style jsx>{`
