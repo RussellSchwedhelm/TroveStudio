@@ -25,9 +25,13 @@ export default function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
       setTimeout(() => inputRef.current?.focus(), 300);
     } else {
       document.body.style.overflow = 'unset';
-      setQuery('');
-      setResults([]);
     }
+    return () => {
+      if (!isOpen) {
+        setQuery('');
+        setResults([]);
+      }
+    };
   }, [isOpen]);
 
   useEffect(() => {
@@ -94,7 +98,7 @@ export default function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
             </div>
           ) : results.length === 0 ? (
             <div className="search-empty">
-              No results found for "{query}".
+              No results found for &ldquo;{query}&rdquo;.
             </div>
           ) : (
             <div className="search-results-grid">

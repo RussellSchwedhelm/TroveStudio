@@ -26,8 +26,8 @@ export default function CareersPage() {
           <h3 className="section-label">Open Positions</h3>
           
           <div className="positions-empty">
-            <p>We don't have any open positions at the moment, but we are always happy to hear from talented individuals.</p>
-            <p>If you'd like to be considered for future opportunities in design, production, or marketing, please send your CV and portfolio to <a href="mailto:careers@trovestudio.co.za">careers@trovestudio.co.za</a>.</p>
+            <p>We don&apos;t have any open positions at the moment, but we are always happy to hear from talented individuals.</p>
+            <p>If you&apos;d like to be considered for future opportunities in design, production, or marketing, please send your CV and portfolio to <a href="mailto:careers@trovestudio.co.za">careers@trovestudio.co.za</a>.</p>
           </div>
         </div>
 

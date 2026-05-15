@@ -4,8 +4,17 @@ import React, { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 import './journal.css';
 
+interface JournalPost {
+  id: string;
+  title: string;
+  subtitle?: string;
+  image_url?: string;
+  is_featured?: boolean;
+  created_at: string;
+}
+
 export default function JournalPage() {
-  const [posts, setPosts] = useState<any[]>([]);
+  const [posts, setPosts] = useState<JournalPost[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

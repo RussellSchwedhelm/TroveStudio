@@ -126,7 +126,7 @@ export default function Home() {
       {/* Quote Section */}
       <section className="quote-section">
         <div className="container">
-          <h2>"Less is more. A fashion-focused selection of timeless jewelry with a casual elegance."</h2>
+          <h2>&ldquo;Less is more. A fashion-focused selection of timeless jewelry with a casual elegance.&rdquo;</h2>
         </div>
       </section>
       
