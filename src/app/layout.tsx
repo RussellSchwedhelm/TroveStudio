@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Search, Heart, ShoppingBag, Menu } from 'lucide-react';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: "Trôve Studio | Minimalist Luxury Jewelry",
@@ -23,16 +24,16 @@ export default function RootLayout({
           <div className="header-inner">
             <nav className="header-nav-left">
               <ul>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Journal</a></li>
-                <li><a href="#">Archive Sale</a></li>
-                <li><a href="#">About</a></li>
+                <li><Link href="/news">News</Link></li>
+                <li><Link href="/shop">Shop</Link></li>
+                <li><Link href="/journal">Journal</Link></li>
+                <li><Link href="/archive-sale">Archive Sale</Link></li>
+                <li><Link href="/about">About</Link></li>
               </ul>
             </nav>
             
             <h1 className="header-logo">
-              <a href="/">TRÔVE STUDIO</a>
+              <Link href="/">TRÔVE STUDIO</Link>
             </h1>
             
             <nav className="header-nav-right">
