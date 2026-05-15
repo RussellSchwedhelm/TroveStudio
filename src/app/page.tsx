@@ -54,6 +54,31 @@ export default function Home() {
     }
   }, [isScrolled]);
 
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-30% 0px -30% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-centered');
+        } else {
+          entry.target.classList.remove('is-centered');
+        }
+      });
+    }, observerOptions);
+
+    const elements = document.querySelectorAll('.hero-item');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
     <>
       {/* Hero Section */}

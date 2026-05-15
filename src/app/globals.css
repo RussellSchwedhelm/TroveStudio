@@ -476,6 +476,9 @@ img {
     .hero-item {
         height: 60vh;
     }
+    .hero-item.is-centered .hero-overlay {
+        opacity: 1;
+    }
     .footer-grid {
         grid-template-columns: 1fr 1fr;
     }
