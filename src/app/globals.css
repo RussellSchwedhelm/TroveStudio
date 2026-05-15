@@ -203,6 +203,7 @@ img {
 .mobile-menu-toggle {
     display: none;
     flex: 1;
+    padding: 0;
 }
 
 /* =========================================
@@ -458,7 +459,9 @@ img {
         display: none;
     }
     .mobile-menu-toggle {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
     }
     
     .header-nav-right {
@@ -467,7 +470,9 @@ img {
     
     .header-logo {
         flex: 2;
-        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .hero-grid {
         flex-direction: column;
@@ -486,7 +491,7 @@ img {
 
 @media (max-width: 768px) {
     .header-inner {
-        padding: 0 20px;
+        padding: 0 12px;
     }
     .header-logo a {
         font-size: 18px;
