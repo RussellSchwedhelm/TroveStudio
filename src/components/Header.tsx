@@ -7,11 +7,13 @@ import { useCart } from '@/components/CartContext';
 import { supabase } from '@/lib/supabase';
 import { User as SupabaseUser } from '@supabase/supabase-js';
 import SearchOverlay from './SearchOverlay';
+import MobileMenu from './MobileMenu';
 
 export default function Header() {
   const { openCart, cartCount } = useCart();
   const [user, setUser] = useState<SupabaseUser | null>(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     // Get initial session
@@ -30,6 +32,14 @@ export default function Header() {
   return (
     <header className="site-header" id="header">
       <div className="header-inner">
+        <button 
+          className="mobile-menu-toggle" 
+          aria-label="Menu"
+          onClick={() => setIsMenuOpen(true)}
+        >
+          <Menu size={20} strokeWidth={1.5} />
+        </button>
+
         <nav className="header-nav-left">
           <ul>
             <li><Link href="/news">News</Link></li>
@@ -72,13 +82,10 @@ export default function Header() {
             </li>
           </ul>
         </nav>
-
-        <button className="mobile-menu-toggle" aria-label="Menu">
-          <Menu size={20} strokeWidth={1.5} />
-        </button>
       </div>
 
       <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
     </header>
   );
 }
