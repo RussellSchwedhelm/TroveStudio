@@ -6,20 +6,25 @@ import '@/app/auth.css';
 export default async function ProfilePage() {
   const supabase = await createClient();
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const { data } = await supabase.auth.getUser();
+  const user = data?.user;
 
   if (!user) {
     redirect('/login');
   }
 
   // Fetch profile data
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('*')
-    .eq('id', user.id)
-    .single();
+  let profile = null;
+  try {
+    const { data } = await supabase
+      .from('profiles')
+      .select('*')
+      .eq('id', user.id)
+      .single();
+    profile = data;
+  } catch (error) {
+    console.error('Error fetching profile:', error);
+  }
 
   const handleLogout = async () => {
     'use server';
@@ -35,11 +40,6 @@ export default async function ProfilePage() {
           <p className="info-label">Account</p>
           <h1>My Profile</h1>
         </div>
-        <form action={handleLogout}>
-          <button type="submit" className="logout-button">
-            Log Out
-          </button>
-        </form>
       </div>
 
       <div className="profile-grid">
@@ -51,6 +51,12 @@ export default async function ProfilePage() {
             <li>Shipping Addresses</li>
             <li>Security</li>
           </ul>
+          
+          <form action={handleLogout} className="logout-form" style={{ marginTop: '40px' }}>
+            <button type="submit" className="logout-button">
+              Log Out
+            </button>
+          </form>
         </aside>
 
         <main className="profile-content">
@@ -58,21 +64,21 @@ export default async function ProfilePage() {
           
           <div className="profile-info-row">
             <span className="info-label">Full Name</span>
-            <span>{profile?.full_name || user.user_metadata?.full_name || 'Not provided'}</span>
+            <span className="info-value">{profile?.full_name || user.user_metadata?.full_name || 'Not provided'}</span>
           </div>
 
           <div className="profile-info-row">
             <span className="info-label">Email Address</span>
-            <span>{user.email}</span>
+            <span className="info-value">{user.email}</span>
           </div>
 
           <div className="profile-info-row">
             <span className="info-label">Member Since</span>
-            <span>{new Date(user.created_at).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
+            <span className="info-value">{new Date(user.created_at).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
           </div>
 
-          <div style={{ marginTop: '40px' }}>
-            <p style={{ fontSize: '13px', color: 'var(--color-text-light)' }}>
+          <div style={{ marginTop: '60px' }}>
+            <p style={{ fontSize: '12px', color: 'var(--color-text-light)', lineHeight: '1.8', maxWidth: '400px' }}>
               To update your personal information or change your password, please contact our support team or use the security settings.
             </p>
           </div>

@@ -40,9 +40,8 @@ export async function proxy(request: NextRequest) {
     }
   );
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const { data } = await supabase.auth.getUser();
+  const user = data?.user;
 
   // Protect the /profile route
   if (!user && request.nextUrl.pathname.startsWith('/profile')) {

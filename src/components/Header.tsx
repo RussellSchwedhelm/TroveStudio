@@ -1,12 +1,29 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Search, Heart, ShoppingBag, Menu, User } from 'lucide-react';
 import { useCart } from '@/components/CartContext';
+import { supabase } from '@/lib/supabase';
+import { User as SupabaseUser } from '@supabase/supabase-js';
 
 export default function Header() {
   const { openCart, cartCount } = useCart();
+  const [user, setUser] = useState<SupabaseUser | null>(null);
+
+  useEffect(() => {
+    // Get initial session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    // Listen for auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
 
   return (
     <header className="site-header" id="header">
@@ -29,8 +46,15 @@ export default function Header() {
           <ul>
             <li><button aria-label="Search"><Search size={20} strokeWidth={1.5} /></button></li>
             <li>
-              <Link href="/profile" aria-label="Profile">
-                <User size={20} strokeWidth={1.5} />
+              <Link href={user ? "/profile" : "/login"} aria-label={user ? "Profile" : "Login"} className="header-icon-link">
+                {user ? (
+                  <div className="user-status">
+                    <User size={20} strokeWidth={1.5} />
+                    <span className="user-dot"></span>
+                  </div>
+                ) : (
+                  <User size={20} strokeWidth={1.5} />
+                )}
               </Link>
             </li>
             <li><button aria-label="Wishlist"><Heart size={20} strokeWidth={1.5} /></button></li>
