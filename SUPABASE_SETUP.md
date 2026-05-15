@@ -19,7 +19,13 @@ INSERT INTO products (title, price, image_url, category)
 VALUES 
   ('The Classic Ring', 2650, '/assets/images/trove_hero_3_1778846644095.png', 'Rings'),
   ('Chunky Hoops', 3850, '/assets/images/trove_hero_1_1778846613200.png', 'Earrings'),
-  ('Statement Chain', 6400, '/assets/images/trove_hero_2_1778846628465.png', 'Necklaces');
+  ('Statement Chain', 6400, '/assets/images/trove_hero_2_1778846628465.png', 'Necklaces'),
+  ('90s Oversized Camel Coat', 12500, '/assets/images/camel_coat.png', 'Tailoring'),
+  ('Silk Tie-Neck Blouse', 4800, '/assets/images/silk_blouse.png', 'Tops'),
+  ('High-Waisted Pleated Trousers', 5200, '/assets/images/pleated_trousers.png', 'Trousers'),
+  ('Chunky Cashmere Turtleneck', 6500, '/assets/images/cashmere_knit.png', 'Knitwear'),
+  ('Vintage Boxy Leather Bag', 8900, '/assets/images/leather_bag.png', 'Accessories'),
+  ('Square Toe Leather Boots', 7400, '/assets/images/leather_boots.png', 'Shoes');
 
 -- Enable Row Level Security (RLS)
 ALTER TABLE products ENABLE ROW LEVEL SECURITY;

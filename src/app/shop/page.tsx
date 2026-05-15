@@ -2,7 +2,7 @@ import React from 'react';
 import { createClient } from '@/lib/supabase-server';
 import './shop.css';
 
-const CATEGORIES = ["All", "Necklaces", "Earrings", "Rings", "Bracelets"];
+const CATEGORIES = ["All", "Tailoring", "Knitwear", "Tops", "Trousers", "Accessories", "Shoes", "Jewelry"];
 
 export default async function ShopPage() {
   const supabase = await createClient();
