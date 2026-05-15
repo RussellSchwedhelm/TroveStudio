@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Search, Heart, ShoppingBag, Menu } from 'lucide-react';
+import { Search, Heart, ShoppingBag, Menu, User } from 'lucide-react';
 import { useCart } from '@/components/CartContext';
 
 export default function Header() {
@@ -28,6 +28,11 @@ export default function Header() {
         <nav className="header-nav-right">
           <ul>
             <li><button aria-label="Search"><Search size={20} strokeWidth={1.5} /></button></li>
+            <li>
+              <Link href="/profile" aria-label="Profile">
+                <User size={20} strokeWidth={1.5} />
+              </Link>
+            </li>
             <li><button aria-label="Wishlist"><Heart size={20} strokeWidth={1.5} /></button></li>
             <li>
               <button aria-label="Cart" onClick={openCart} className="cart-trigger">
@@ -45,3 +50,4 @@ export default function Header() {
     </header>
   );
 }
+
