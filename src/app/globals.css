@@ -110,13 +110,30 @@ img {
     align-items: center;
     height: 100%;
     padding: 0 40px;
+    position: relative;
 }
 
-.header-nav-left ul,
+.header-nav-left,
+.header-nav-right {
+    flex: 1;
+}
+
+.header-nav-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header-nav-left ul {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
 .header-nav-right ul {
     display: flex;
     gap: 30px;
     align-items: center;
+    justify-content: flex-end;
 }
 
 .header-nav-left a {

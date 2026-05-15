@@ -31,9 +31,9 @@ export default function RootLayout({
               </ul>
             </nav>
             
-            <div className="header-logo">
+            <h1 className="header-logo">
               <a href="/">TRÔVE STUDIO</a>
-            </div>
+            </h1>
             
             <nav className="header-nav-right">
               <ul>
