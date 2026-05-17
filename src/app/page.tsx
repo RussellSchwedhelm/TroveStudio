@@ -93,7 +93,7 @@ export default function Home() {
               priority
             />
             <div className="hero-overlay">
-              <a href="#" className="hero-link">Shop Earrings</a>
+              <a href="/shop" className="hero-link">Shop Earrings</a>
             </div>
           </div>
           <div className="hero-item">
@@ -105,7 +105,7 @@ export default function Home() {
               priority
             />
             <div className="hero-overlay">
-              <a href="#" className="hero-link">Shop Necklaces</a>
+              <a href="/shop" className="hero-link">Shop Necklaces</a>
             </div>
           </div>
           <div className="hero-item">
@@ -117,7 +117,7 @@ export default function Home() {
               priority
             />
             <div className="hero-overlay">
-              <a href="#" className="hero-link">Shop Bracelets & Rings</a>
+              <a href="/shop" className="hero-link">Shop Bracelets & Rings</a>
             </div>
           </div>
         </div>
@@ -134,7 +134,7 @@ export default function Home() {
       <section className="featured-products container">
         <div className="section-header">
           <h3>New Arrivals</h3>
-          <a href="#" className="view-all">View All</a>
+          <a href="/shop" className="view-all">View All</a>
         </div>
         <div className="product-grid">
           {products.map((product) => (

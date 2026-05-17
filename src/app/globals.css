@@ -713,6 +713,7 @@ img {
 }
 
 .checkout-button {
+    display: block;
     width: 100%;
     padding: 18px;
     background-color: var(--color-text);
@@ -722,6 +723,7 @@ img {
     letter-spacing: 1.5px;
     font-weight: 500;
     transition: opacity 0.3s ease;
+    text-align: center;
 }
 
 .checkout-button:hover {

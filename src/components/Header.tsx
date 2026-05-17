@@ -73,7 +73,7 @@ export default function Header() {
                 )}
               </Link>
             </li>
-            <li><button aria-label="Wishlist"><Heart size={20} strokeWidth={1.5} /></button></li>
+            <li><Link href="/wishlist" aria-label="Wishlist" className="header-icon-link"><Heart size={20} strokeWidth={1.5} /></Link></li>
             <li>
               <button aria-label="Cart" onClick={openCart} className="cart-trigger">
                 <ShoppingBag size={20} strokeWidth={1.5} />

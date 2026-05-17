@@ -114,9 +114,9 @@ export default function CartDrawer() {
               <span>R {cartTotal.toLocaleString()}</span>
             </div>
             <p className="cart-shipping-note">Shipping and taxes calculated at checkout</p>
-            <button className="checkout-button">
+            <a href="/checkout" className="checkout-button">
               Checkout
-            </button>
+            </a>
           </div>
         )}
       </div>
