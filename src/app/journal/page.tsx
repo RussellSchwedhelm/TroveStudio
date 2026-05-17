@@ -1,42 +1,56 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import { supabase } from '@/lib/supabase';
+import React from 'react';
 import './journal.css';
 
-interface JournalPost {
-  id: string;
-  title: string;
-  subtitle?: string;
-  image_url?: string;
-  is_featured?: boolean;
-  created_at: string;
-}
+const FEATURED_POST = {
+  id: "1",
+  label: "Editorial",
+  title: "The Art of Wearing Less",
+  subtitle: "In a world saturated with trend cycles and fast consumption, we explore what it means to dress with true intention — and why owning fewer, better things is the ultimate form of self-expression.",
+  image: "/assets/images/trove_hero_2_1778846628465.png"
+};
+
+const JOURNAL_POSTS = [
+  {
+    id: "2",
+    title: "Silver & Stone: A Materials Study",
+    subtitle: "Process",
+    image: "/assets/images/trove_hero_3_1778846644095.png"
+  },
+  {
+    id: "3",
+    title: "How to Build a Capsule Wardrobe",
+    subtitle: "Style",
+    image: "/assets/images/camel_coat.png"
+  },
+  {
+    id: "4",
+    title: "The Architects of Calm",
+    subtitle: "Inspiration",
+    image: "/assets/images/silk_blouse.png"
+  },
+  {
+    id: "5",
+    title: "On Texture, Touch & the Tactile",
+    subtitle: "Craft",
+    image: "/assets/images/cashmere_knit.png"
+  },
+  {
+    id: "6",
+    title: "Dressing for Yourself",
+    subtitle: "Essay",
+    image: "/assets/images/pleated_trousers.png"
+  },
+  {
+    id: "7",
+    title: "The Case for Leather",
+    subtitle: "Material",
+    image: "/assets/images/leather_bag.png"
+  }
+];
 
 export default function JournalPage() {
-  const [posts, setPosts] = useState<JournalPost[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function fetchPosts() {
-      const { data } = await supabase
-        .from('journals')
-        .select('*')
-        .order('created_at', { ascending: false });
-      
-      setPosts(data || []);
-      setLoading(false);
-    }
-    fetchPosts();
-  }, []);
-
-  if (loading) {
-    return <div className="journal-page container" style={{ paddingTop: '80px', textAlign: 'center' }}>Loading...</div>;
-  }
-
-  const featuredPost = posts.find(p => p.is_featured) || posts[0];
-  const otherPosts = featuredPost ? posts.filter(p => p.id !== featuredPost.id) : posts;
-
   return (
     <div className="journal-page">
       <section className="page-header container">
@@ -44,40 +58,32 @@ export default function JournalPage() {
         <p className="page-description">Stories, inspirations, and the lifestyle behind Trôve Studio.</p>
       </section>
 
-      {featuredPost && (
-        <section className="journal-featured container">
-          <div className="featured-item">
-            <div className="featured-image">
-              <img src={featuredPost.image_url} alt={featuredPost.title} />
-            </div>
-            <div className="featured-content">
-              <span className="journal-label">Editorial</span>
-              <h2 className="featured-title">{featuredPost.title}</h2>
-              <p>{featuredPost.subtitle}</p>
-              <a href={`/journal/${featuredPost.id}`} className="read-story">Read Story</a>
-            </div>
+      <section className="journal-featured container">
+        <div className="featured-item">
+          <div className="featured-image">
+            <img src={FEATURED_POST.image} alt={FEATURED_POST.title} />
           </div>
-        </section>
-      )}
+          <div className="featured-content">
+            <span className="journal-label">{FEATURED_POST.label}</span>
+            <h2 className="featured-title">{FEATURED_POST.title}</h2>
+            <p>{FEATURED_POST.subtitle}</p>
+            <a href="#" className="read-story">Read Story</a>
+          </div>
+        </div>
+      </section>
 
       <section className="journal-grid container">
-        {otherPosts.length > 0 ? (
-          otherPosts.map((post) => (
-            <div key={post.id} className="journal-card">
-              <div className="journal-card-image">
-                <img src={post.image_url} alt={post.title} />
-              </div>
-              <div className="journal-card-content">
-                <h3 className="journal-card-title">{post.title}</h3>
-                <p className="journal-card-subtitle">{post.subtitle}</p>
-              </div>
+        {JOURNAL_POSTS.map((post) => (
+          <div key={post.id} className="journal-card">
+            <div className="journal-card-image">
+              <img src={post.image} alt={post.title} />
             </div>
-          ))
-        ) : !featuredPost && (
-          <p style={{ textAlign: 'center', gridColumn: '1/-1', color: 'var(--color-text-light)' }}>
-            New stories coming soon.
-          </p>
-        )}
+            <div className="journal-card-content">
+              <h3 className="journal-card-title">{post.title}</h3>
+              <p className="journal-card-subtitle">{post.subtitle}</p>
+            </div>
+          </div>
+        ))}
       </section>
     </div>
   );

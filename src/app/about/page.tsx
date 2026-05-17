@@ -41,20 +41,36 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="about-image">
-            <div className="image-placeholder" style={{ 
-              aspectRatio: '4/5', 
-              backgroundColor: '#F7F7F7', 
-              width: '100%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '12px',
-              textTransform: 'uppercase',
-              letterSpacing: '1px',
-              color: '#999'
-            }}>
-              [ Studio Image ]
-            </div>
+            <img
+              src="/assets/images/studio_workspace.png"
+              alt="Trôve Studio workspace with silver jewelry and tools on linen"
+              className="studio-photo"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="about-values container">
+        <div className="values-grid">
+          <div className="value-item">
+            <span className="value-number">01</span>
+            <h4>Cape Town Made</h4>
+            <p>Each piece is crafted by hand in our Cape Town atelier by skilled local artisans.</p>
+          </div>
+          <div className="value-item">
+            <span className="value-number">02</span>
+            <h4>Limited Editions</h4>
+            <p>We produce in small batches to ensure quality, reduce waste, and maintain exclusivity.</p>
+          </div>
+          <div className="value-item">
+            <span className="value-number">03</span>
+            <h4>Ethical Sourcing</h4>
+            <p>All materials are responsibly sourced, with full traceability from mine to studio.</p>
+          </div>
+          <div className="value-item">
+            <span className="value-number">04</span>
+            <h4>Lifetime Care</h4>
+            <p>Every piece comes with our lifetime cleaning and repair promise at no cost.</p>
           </div>
         </div>
       </section>
