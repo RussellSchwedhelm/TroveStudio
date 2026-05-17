@@ -5,8 +5,8 @@ import Header from "@/components/Header";
 import CartDrawer from "@/components/CartDrawer";
 
 export const metadata: Metadata = {
-  title: "Trôve Studio | Minimalist Luxury Jewelry",
-  description: "Discover Trôve Studio's selection of timeless, minimalist jewelry with a casual elegance.",
+  title: "Trôve Studio | Curated Vintage Retail",
+  description: "Discover Trôve Studio's curated selection of high-end vintage pieces, released in seasonal capsule drops.",
 };
 
 export default function RootLayout({
@@ -35,7 +35,7 @@ export default function RootLayout({
                   <li><a href="/contact">Contact Us</a></li>
                   <li><a href="/shipping-returns">Shipping & Returns</a></li>
                   <li><a href="/faq">FAQ</a></li>
-                  <li><a href="/jewelry-care">Jewelry Care</a></li>
+                  <li><a href="/garment-care">Garment Care</a></li>
                 </ul>
               </div>
               <div className="footer-column">

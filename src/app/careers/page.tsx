@@ -15,7 +15,7 @@ export default function CareersPage() {
         <div className="careers-intro">
           <h2 className="serif-subtitle">Working at Trôve Studio</h2>
           <p>
-            Trôve Studio is a growing jewelry brand built on a foundation of minimalist design and artisanal craftsmanship. We are always looking for creative, dedicated individuals who share our vision and values.
+            Trôve Studio is a growing curated vintage retail brand built on a foundation of quality, exclusivity, and conscious consumption. We are always looking for creative, dedicated individuals who share our vision and values.
           </p>
           <p>
             While we are a small team, we offer a collaborative and inspiring environment where every member plays a vital role in our growth.
@@ -33,8 +33,8 @@ export default function CareersPage() {
 
         <div className="culture-grid">
           <div className="culture-item">
-            <h4>Craftsmanship</h4>
-            <p>We value the art of making and the time it takes to create something truly special.</p>
+            <h4>Curation</h4>
+            <p>We value the art of sourcing and the time it takes to discover something truly special.</p>
           </div>
           <div className="culture-item">
             <h4>Minimalism</h4>

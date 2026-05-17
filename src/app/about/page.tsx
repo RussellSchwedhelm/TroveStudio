@@ -14,28 +14,28 @@ export default function AboutPage() {
         <div className="about-grid">
           <div className="about-text">
             <p className="lead">
-              Trôve Studio was born out of a desire for timeless, minimalist jewelry that speaks to a sense of casual elegance.
+              Trôve Studio is a high-end vintage retail destination focused on quality, curation, and uniqueness.
             </p>
             <p>
-              Founded in 2024, our studio focuses on creating pieces that are not just accessories, but companions for your daily life. Each piece is thoughtfully designed with a focus on form, material, and the way it interacts with the wearer.
+              Founded in 2024, our store caters to the modern woman who seeks distinctive vintage pieces but doesn't have the time to sift through traditional charity stores. Each piece is thoughtfully curated with a focus on form, fabric, and timelessness.
             </p>
             <p>
-              We believe in quality over quantity, choosing to produce limited collections that prioritize craftsmanship and ethical sourcing. Our aesthetic is rooted in the intersection of traditional techniques and modern minimalism.
+              We believe in quality over quantity, choosing to release carefully selected garments in seasonal and quarterly capsule drops. Our aesthetic is rooted in the intersection of modern minimalism and classic elegance.
             </p>
             <div className="philosophy-section">
               <h3>Our Philosophy</h3>
               <ul>
                 <li>
-                  <strong>Intentional Design</strong>
-                  <p>Every curve and line is considered to ensure a perfect balance of comfort and style.</p>
+                  <strong>Intentional Curation</strong>
+                  <p>Every piece is selected to ensure a perfect balance of comfort, style, and condition.</p>
                 </li>
                 <li>
                   <strong>Honest Materials</strong>
-                  <p>We work with solid gold, sterling silver, and ethically sourced gemstones.</p>
+                  <p>We focus on natural fibers, enduring fabrics, and exceptional tailoring.</p>
                 </li>
                 <li>
                   <strong>Lasting Beauty</strong>
-                  <p>Our jewelry is made to be worn, loved, and passed down through generations.</p>
+                  <p>Our vintage pieces are meant to be worn, loved, and given a beautiful second life.</p>
                 </li>
               </ul>
             </div>
@@ -43,7 +43,7 @@ export default function AboutPage() {
           <div className="about-image">
             <img
               src="/assets/images/studio_workspace.png"
-              alt="Trôve Studio workspace with silver jewelry and tools on linen"
+              alt="Vintage studio workspace"
               className="studio-photo"
             />
           </div>
@@ -54,23 +54,23 @@ export default function AboutPage() {
         <div className="values-grid">
           <div className="value-item">
             <span className="value-number">01</span>
-            <h4>Cape Town Made</h4>
-            <p>Each piece is crafted by hand in our Cape Town atelier by skilled local artisans.</p>
+            <h4>Global Sourcing</h4>
+            <p>Each piece is sourced internationally, discovering hidden gems with unique histories.</p>
           </div>
           <div className="value-item">
             <span className="value-number">02</span>
-            <h4>Limited Editions</h4>
-            <p>We produce in small batches to ensure quality, reduce waste, and maintain exclusivity.</p>
+            <h4>Capsule Drops</h4>
+            <p>We release our curated collections in seasonal capsules to maintain exclusivity and intention.</p>
           </div>
           <div className="value-item">
             <span className="value-number">03</span>
-            <h4>Ethical Sourcing</h4>
-            <p>All materials are responsibly sourced, with full traceability from mine to studio.</p>
+            <h4>Conscious Consumption</h4>
+            <p>By extending the lifecycle of high-quality garments, we promote a more sustainable fashion model.</p>
           </div>
           <div className="value-item">
             <span className="value-number">04</span>
-            <h4>Lifetime Care</h4>
-            <p>Every piece comes with our lifetime cleaning and repair promise at no cost.</p>
+            <h4>Exceptional Quality</h4>
+            <p>Every piece undergoes a rigorous inspection and care process before it reaches our store.</p>
           </div>
         </div>
       </section>

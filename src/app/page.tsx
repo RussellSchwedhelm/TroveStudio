@@ -8,19 +8,19 @@ import { useCart } from '@/components/CartContext';
 const products = [
   {
     id: "1",
-    title: "The Classic Ring",
+    title: "The Classic Blazer",
     price: 2650,
     image: "/assets/images/trove_hero_3_1778846644095.png"
   },
   {
     id: "2",
-    title: "Chunky Hoops",
+    title: "Vintage Silk Scarf",
     price: 3850,
     image: "/assets/images/trove_hero_1_1778846613200.png"
   },
   {
     id: "3",
-    title: "Statement Chain",
+    title: "Oversized Cashmere Coat",
     price: 6400,
     image: "/assets/images/trove_hero_2_1778846628465.png"
   }
@@ -87,37 +87,37 @@ export default function Home() {
           <div className="hero-item">
             <Image 
               src="/assets/images/trove_hero_1_1778846613200.png" 
-              alt="Model wearing chunky silver hoop earrings" 
+              alt="Vintage collection piece" 
               width={800} 
               height={1200}
               priority
             />
             <div className="hero-overlay">
-              <a href="/shop" className="hero-link">Shop Earrings</a>
+              <a href="/shop" className="hero-link">Shop Latest Capsule</a>
             </div>
           </div>
           <div className="hero-item">
             <Image 
               src="/assets/images/trove_hero_2_1778846628465.png" 
-              alt="Model wearing thick elegant silver chain necklace" 
+              alt="Vintage collection piece" 
               width={800} 
               height={1200}
               priority
             />
             <div className="hero-overlay">
-              <a href="/shop" className="hero-link">Shop Necklaces</a>
+              <a href="/shop" className="hero-link">Shop The Collection</a>
             </div>
           </div>
           <div className="hero-item">
             <Image 
               src="/assets/images/trove_hero_3_1778846644095.png" 
-              alt="Silver ring and chain bracelet on linen cloth" 
+              alt="Vintage collection piece" 
               width={800} 
               height={1200}
               priority
             />
             <div className="hero-overlay">
-              <a href="/shop" className="hero-link">Shop Bracelets & Rings</a>
+              <a href="/shop" className="hero-link">Shop All Archive</a>
             </div>
           </div>
         </div>
@@ -126,7 +126,7 @@ export default function Home() {
       {/* Quote Section */}
       <section className="quote-section">
         <div className="container">
-          <h2>&ldquo;Less is more. A fashion-focused selection of timeless jewelry with a casual elegance.&rdquo;</h2>
+          <h2>&ldquo;A curated selection of high-end vintage pieces, released in seasonal capsule drops for the modern woman.&rdquo;</h2>
         </div>
       </section>
       

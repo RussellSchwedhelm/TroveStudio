@@ -8,16 +8,16 @@ const faqData = [
     category: "Products & Sizing",
     questions: [
       {
-        question: "How do I find my ring size?",
-        answer: "We offer a downloadable size guide on our website. Alternatively, you can visit any local jeweler to have your fingers sized professionally. We follow standard UK/SA sizing (letters)."
+        question: "How do I know if an item will fit me?",
+        answer: "We provide detailed measurements for every garment, including shoulders, chest, waist, and length. Because vintage sizing varies greatly from modern standards, we recommend comparing these measurements to a piece of clothing you already own."
       },
       {
-        question: "What materials do you use?",
-        answer: "We work primarily with solid 9ct and 18ct gold, and sterling silver. Some pieces feature ethically sourced precious and semi-precious gemstones. Material details are listed on each product page."
+        question: "What condition are the garments in?",
+        answer: "All items are carefully inspected, cleaned, and repaired if necessary. We classify our pieces as Excellent (like new), Very Good (minor signs of wear), or Good (visible wear). Any specific flaws will be detailed in the product description."
       },
       {
-        question: "Are your pieces handmade?",
-        answer: "Yes, every piece of Trôve Studio jewelry is handcrafted in our Pretoria studio. We pride ourselves on the artisanal quality and attention to detail that only manual production can provide."
+        question: "Where do you source your pieces?",
+        answer: "Our collections are globally sourced from private collections, estate sales, and specialist vintage dealers. We focus on finding high-quality, unique pieces with exceptional tailoring."
       }
     ]
   },
@@ -25,8 +25,8 @@ const faqData = [
     category: "Orders & Shipping",
     questions: [
       {
-        question: "How long will my order take?",
-        answer: "As many of our pieces are made to order, please allow 7-14 business days for production before shipping. Ready-to-ship items are processed within 2-3 business days."
+        question: "How often do you drop new collections?",
+        answer: "We release new collections in seasonal capsule drops, usually quarterly. Subscribe to our newsletter to get early access to drop dates."
       },
       {
         question: "Can I track my order?",
@@ -39,15 +39,15 @@ const faqData = [
     ]
   },
   {
-    category: "Jewelry Care",
+    category: "Garment Care",
     questions: [
       {
-        question: "How should I clean my jewelry?",
-        answer: "We recommend using a soft, lint-free cloth or a dedicated jewelry polishing cloth. For a deeper clean, mild soap and warm water can be used on most pieces (excluding certain porous stones like opals or pearls)."
+        question: "How should I clean my vintage pieces?",
+        answer: "We recommend dry cleaning for structured pieces like blazers and coats. For silks and delicate cottons, hand washing in cold water with a gentle detergent is best. Always refer to the care card included with your purchase."
       },
       {
-        question: "Can I wear my jewelry in the shower?",
-        answer: "While solid gold is generally fine, we recommend removing all jewelry before showering, swimming, or exercising to avoid exposure to harsh chemicals and physical damage."
+        question: "How should I store my vintage garments?",
+        answer: "Store your pieces in a cool, dry place. Use padded or wooden hangers for coats and jackets to maintain their shape, and fold heavy knitwear to prevent stretching."
       }
     ]
   }

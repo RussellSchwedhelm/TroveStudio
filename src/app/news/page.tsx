@@ -8,24 +8,24 @@ const NEWS_ITEMS = [
     id: 1,
     category: "Collection",
     date: "May 12, 2026",
-    title: "Introducing the Solstice Collection",
-    excerpt: "Our newest series of hand-formed silver pieces draws from the quiet geometry of shadows cast at golden hour. Each piece is a study in restraint — where negative space becomes as intentional as the metal itself.",
+    title: "Introducing the Autumn Capsule",
+    excerpt: "Our newest curation of high-end vintage pieces draws from classic silhouettes and enduring fabrics. Each piece is a study in restraint — where timeless tailoring speaks louder than fleeting trends.",
     image: "/assets/images/trove_hero_3_1778846644095.png"
   },
   {
     id: 2,
-    category: "Studio",
+    category: "Sourcing",
     date: "April 28, 2026",
-    title: "Behind the Craft: A Day in the Studio",
-    excerpt: "We open the doors to our Cape Town atelier, where every ring is hand-finished and every chain is inspected by the same hands that shaped it. A rare look at the process behind the pieces.",
+    title: "The Art of the Find",
+    excerpt: "We share our process of sourcing vintage treasures across the globe. From hidden estate sales to specialist dealers, discover how we curate pieces that meet our exacting standards.",
     image: "/assets/images/trove_hero_1_1778846613200.png"
   },
   {
     id: 3,
     category: "Sustainability",
     date: "April 10, 2026",
-    title: "Our Commitment to Responsible Sourcing",
-    excerpt: "From ethically mined silver to recycled gold, we outline the exacting standards we hold ourselves to — and why we believe that beautiful jewelry should never come at the cost of people or planet.",
+    title: "Our Commitment to Circular Fashion",
+    excerpt: "By extending the lifecycle of beautifully crafted garments, we outline the exacting standards we hold ourselves to — and why we believe that luxury fashion should prioritize the planet.",
     image: "/assets/images/trove_hero_2_1778846628465.png"
   }
 ];

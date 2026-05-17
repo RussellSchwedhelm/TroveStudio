@@ -79,9 +79,9 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
         <div className="mobile-menu-footer">
           <div className="mobile-menu-social">
-            <a href="https://www.instagram.com/trovejewelry" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><InstagramIcon /></a>
-            <a href="https://www.facebook.com/trovejewelry" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FacebookIcon /></a>
-            <a href="https://www.twitter.com/trovejewelry" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><TwitterIcon /></a>
+            <a href="https://www.instagram.com/trovestudio" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><InstagramIcon /></a>
+            <a href="https://www.facebook.com/trovestudio" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FacebookIcon /></a>
+            <a href="https://www.twitter.com/trovestudio" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><TwitterIcon /></a>
           </div>
           <div className="mobile-menu-auth">
             <Link href="/login" onClick={onClose} className="mobile-menu-btn">Account</Link>
